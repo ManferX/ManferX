@@ -1,145 +1,681 @@
-# 🚑 VRIM Landing Page - Protección Médica Integral
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRIM - Protección Médica Total</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Click_Here-success?style=for-the-badge)](https://manferx.github.io/vrim-landing-page/)
-[![WhatsApp](https://img.shields.io/badge/📱_WhatsApp-Contactar-25D366?style=for-the-badge)](https://wa.me/527223540986)
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
 
-## 🎯 **Descripción del Proyecto**
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-Página de venta interactiva y responsive diseñada para promocionar las membresías VRIM, el programa de protección médica líder en México con más de 30 años de experiencia.
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
 
-### ✨ **Características Principales:**
+        .hero h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-- 🎨 **Diseño Moderno**: Interfaz atractiva con animaciones y micro-interacciones
-- 📱 **Responsive**: Optimizada para todos los dispositivos 
-- ⚡ **Alta Conversión**: Elementos de urgencia y llamadas a la acción estratégicas
-- 💬 **Integración WhatsApp**: Contacto directo con mensajes personalizados
-- ⏰ **Contador Regresivo**: Genera urgencia para aumentar conversiones
-- 🎯 **Cards Interactivas**: Información desplegable de cada membresía
+        .urgency-banner {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+        }
 
-## 🏆 **Membresías Disponibles**
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 20px;
+        }
 
-| Membresía | Precio Anual | Muerte Accidental | Gastos Médicos | Destacado |
-|-----------|--------------|-------------------|----------------|-----------|
-| 👑 **ELITE** | $6,950 | $500,000 | $50,000 | Seguro de vida $200k + Procedimientos quirúrgicos |
-| ⭐ **PLATINO** | $2,100 | $500,000 | $50,000 | Mejor relación precio-beneficio |
-| 🖤 **BLACK** | $1,050 | $200,000 | $20,000 | Protección esencial completa |
-| 💙 **PLUS** | $790 | $110,000 | $20,000 | Ideal para comenzar |
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-## 🛠️ **Tecnologías Utilizadas**
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
 
-### **Características Técnicas:**
-- ✅ **Vanilla JavaScript** - Sin dependencias externas
-- ✅ **CSS Grid & Flexbox** - Layout moderno
-- ✅ **CSS Animations** - Experiencia fluida
-- ✅ **Mobile-First Design** - Optimizado para móviles
-- ✅ **SEO Optimized** - Meta tags y estructura semántica
+        .membership-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 20px;
+        }
 
-## 🚀 **Demo en Vivo**
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
 
-### 👆 **[VER PÁGINA EN VIVO](https://manferx.github.io/vrim-landing-page/)**
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
 
-> **¡Prueba todas las funcionalidades!**  
-> Haz clic en las tarjetas de membresías para ver los beneficios completos
+        .card.elite {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #2c3e50;
+        }
 
-## 📊 **Métricas de Rendimiento**
+        .card.platino {
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #2c3e50;
+        }
 
-- ⚡ **Tiempo de carga**: < 2 segundos
-- 📱 **Mobile Score**: 95/100
-- 🎯 **Conversion Rate**: 85%+
-- 💬 **WhatsApp Integration**: Funcional 100%
+        .card.black {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
 
-## 🎨 **Capturas de Pantalla**
+        .card.plus {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+        }
 
-### Desktop View:
-![Desktop Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Desktop+Preview)
+        .card-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-### Mobile View:
-![Mobile Preview](https://via.placeholder.com/300x600/764ba2/ffffff?text=Mobile+Preview)
+        .card-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-## 📈 **Características de Conversión**
+        .card-price {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-### 🎯 **Elementos de Urgencia:**
-- Contador regresivo hasta fin de mes
-- Banners de "Oferta Limitada"
-- Estadísticas impactantes (86% urgencias no reales)
+        .card-period {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
 
-### 💎 **Elementos de Confianza:**
-- 30+ años de experiencia
-- Cobertura nacional completa
-- Atención 24/7 garantizada
-- Testimonios implícitos
+        .benefits {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
 
-### 🚀 **Call-to-Actions Optimizadas:**
-- Botones WhatsApp con mensajes pre-escritos
-- Múltiples puntos de contacto
-- Mensajes personalizados por membresía
+        .benefits.active {
+            display: block;
+            animation: slideDown 0.5s ease-out;
+        }
 
-## 🔧 **Instalación Local**
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
 
-```bash
-# Clonar el repositorio
-git clone https://github.com/ManferX/vrim-landing-page.git
+        .benefit-icon {
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
 
-# Navegar al directorio
-cd vrim-landing-page
+        .highlight {
+            background: rgba(255, 255, 0, 0.3);
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-# Abrir con Live Server o navegador
-open index.html
-```
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
 
-## 📱 **Contacto Directo**
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
 
-### ¿Interesado en una membresía VRIM?
+        .social-proof {
+            text-align: center;
+            margin: 50px 20px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
 
-[![WhatsApp](https://img.shields.io/badge/💬_WhatsApp-Contactar_Ahora-25D366?style=for-the-badge)](https://wa.me/527223540986?text=Hola%20Manuel,%20vi%20tu%20página%20de%20VRIM%20en%20GitHub%20y%20me%20interesa%20más%20información)
+        .countdown {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.5em;
+        }
 
-**📞 Teléfono:** +52 722 354 0986  
-**⏰ Horario:** Lunes a Domingo, 8:00 AM - 10:00 PM  
-**📍 Ubicación:** México 🇲🇽
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
 
-## 🤝 **¿Te Gusta el Proyecto?**
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
 
-Si este proyecto te resulta útil o interesante:
+        .floating-benefits {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
 
-- ⭐ **Dale una estrella** al repositorio
-- 🔄 **Compártelo** con otros emprendedores
-- 👀 **Sígueme** para más proyectos de HealthTech
-- 💬 **Contáctame** para colaboraciones
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-## 📝 **Próximas Actualizaciones**
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+            }
+        }
 
-- [ ] 🤖 Integración con ChatBot automatizado
-- [ ] 📊 Dashboard de analytics integrado  
-- [ ] 🎯 A/B Testing para diferentes versiones
-- [ ] 💳 Integración con pasarelas de pago
-- [ ] 🗺️ Mapa de cobertura interactivo
-- [ ] 📱 PWA (Progressive Web App)
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
 
-## 🏥 **Sobre VRIM**
+        @keyframes float {
+            0%, 100% { transform: translateY(-50%) translateX(0); }
+            50% { transform: translateY(-50%) translateX(-10px); }
+        }
 
-VRIM es el programa de protección médica líder en México, con más de 30 años ayudando a familias mexicanas a acceder a servicios de salud de calidad. Ofrecemos:
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .floating-benefits {
+                position: static;
+                transform: none;
+                margin: 20px;
+                animation: none;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .countdown-timer {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🚨 VRIM - Protección Médica Total 🚨</h1>
+            <p style="font-size: 1.3em; margin-bottom: 20px;">
+                <strong>Más de 30 años protegiendo familias mexicanas</strong>
+            </p>
+            <p style="font-size: 1.1em; color: #666;">
+                Ambulancia gratuita • Check-ups anuales • Consultas especializadas • Seguros de vida
+            </p>
+        </div>
 
-- 🚑 Ambulancia gratuita
-- 🏥 Check-ups anuales
-- 💊 Consultas especializadas
-- 💰 Seguros de vida y accidentes
-- ⚰️ Servicios funerarios
-- 🦷 Cobertura dental
+        <div class="urgency-banner">
+            🔥 ¡OFERTA LIMITADA! Solo por este mes - Descuentos especiales disponibles 🔥
+        </div>
 
-## 📄 **Licencia**
+        <div class="countdown">
+            ⏰ Tiempo limitado para aprovechar esta oferta:
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div id="days">--</div>
+                    <small>Días</small>
+                </div>
+                <div class="countdown-item">
+                    <div id="hours">--</div>
+                    <small>Horas</small>
+                </div>
+                <div class="countdown-item">
+                    <div id="minutes">--</div>
+                    <small>Min</small>
+                </div>
+                <div class="countdown-item">
+                    <div id="seconds">--</div>
+                    <small>Seg</small>
+                </div>
+            </div>
+        </div>
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-number">86%</span>
+                <p>de las urgencias NO son emergencias reales</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">30+</span>
+                <p>años de experiencia</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <p>atención médica</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <p>cobertura nacional</p>
+            </div>
+        </div>
 
----
+        <div class="membership-cards">
+            <div class="card elite" onclick="toggleBenefits('elite')">
+                <div class="card-header">
+                    <div class="card-title">👑 ELITE</div>
+                    <div class="card-price">$6,950</div>
+                    <div class="card-period">Anual con IVA</div>
+                    <p style="margin-top: 10px; font-weight: bold;">¡La más completa!</p>
+                </div>
+                
+                <div class="benefits" id="elite-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💰</div>
+                        <div><span class="highlight">Seguro de vida $200,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div><span class="highlight">Muerte accidental $500,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏥</div>
+                        <div><span class="highlight">Reembolso gastos médicos $50,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔧</div>
+                        <div><span class="highlight">11 procedimientos quirúrgicos cubiertos</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🦷</div>
+                        <div>Seguro dental $10,000 anuales</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">❤️</div>
+                        <div>Electrocardiograma + Check-up gratuito</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚑</div>
+                        <div>Ambulancia gratuita</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💻</div>
+                        <div>2 videoconsultas + 2 consultas presenciales</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚰️</div>
+                        <div>Servicio funerario completo</div>
+                    </div>
+                </div>
+                
+                <button class="whatsapp-btn" onclick="contactWhatsApp('ELITE')">
+                    📱 ¡Quiero ELITE ahora!
+                </button>
+            </div>
 
-<div align="center">
+            <div class="card platino" onclick="toggleBenefits('platino')">
+                <div class="card-header">
+                    <div class="card-title">⭐ PLATINO</div>
+                    <div class="card-price">$2,100</div>
+                    <div class="card-period">Anual con IVA</div>
+                    <p style="margin-top: 10px; font-weight: bold;">¡Excelente relación precio-beneficio!</p>
+                </div>
+                
+                <div class="benefits" id="platino-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div><span class="highlight">Muerte accidental $500,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏥</div>
+                        <div><span class="highlight">Reembolso gastos médicos $50,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">❤️</div>
+                        <div>Electrocardiograma + Check-up gratuito</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚑</div>
+                        <div>Ambulancia gratuita</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💻</div>
+                        <div>2 videoconsultas + 1 consulta presencial</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚰️</div>
+                        <div>Servicio funerario completo</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🩺</div>
+                        <div>Atención médica 24/7</div>
+                    </div>
+                </div>
+                
+                <button class="whatsapp-btn" onclick="contactWhatsApp('PLATINO')">
+                    📱 ¡Quiero PLATINO ahora!
+                </button>
+            </div>
 
-**💙 Construyendo un México más saludable con tecnología 💙**
+            <div class="card black" onclick="toggleBenefits('black')">
+                <div class="card-header">
+                    <div class="card-title">🖤 BLACK</div>
+                    <div class="card-price">$1,050</div>
+                    <div class="card-period">Anual con IVA</div>
+                    <p style="margin-top: 10px; font-weight: bold;">¡Protección esencial!</p>
+                </div>
+                
+                <div class="benefits" id="black-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div><span class="highlight">Muerte accidental $200,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏥</div>
+                        <div>Reembolso gastos médicos $20,000</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚰️</div>
+                        <div>Gastos funerarios $30,000</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">❤️</div>
+                        <div>Check-up anual gratuito</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚑</div>
+                        <div>Ambulancia gratuita</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💻</div>
+                        <div>2 videoconsultas + 1 consulta presencial</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🩺</div>
+                        <div>Atención médica 24/7</div>
+                    </div>
+                </div>
+                
+                <button class="whatsapp-btn" onclick="contactWhatsApp('BLACK')">
+                    📱 ¡Quiero BLACK ahora!
+                </button>
+            </div>
 
-[![GitHub](https://img.shields.io/badge/ManferX-Follow-181717?style=social&logo=github)](https://github.com/ManferX)
+            <div class="card plus" onclick="toggleBenefits('plus')">
+                <div class="card-header">
+                    <div class="card-title">💙 VRIM PLUS</div>
+                    <div class="card-price">$790</div>
+                    <div class="card-period">Anual con IVA</div>
+                    <p style="margin-top: 10px; font-weight: bold;">¡Ideal para empezar!</p>
+                </div>
+                
+                <div class="benefits" id="plus-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div><span class="highlight">Muerte accidental $110,000</span></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏥</div>
+                        <div>Reembolso gastos médicos $20,000</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚰️</div>
+                        <div>Gastos funerarios $30,000</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">❤️</div>
+                        <div>Check-up anual gratuito</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚑</div>
+                        <div>Ambulancia gratuita</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💻</div>
+                        <div>2 videoconsultas especializadas</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🩺</div>
+                        <div>Atención médica 24/7</div>
+                    </div>
+                </div>
+                
+                <button class="whatsapp-btn" onclick="contactWhatsApp('VRIM PLUS')">
+                    📱 ¡Quiero VRIM PLUS ahora!
+                </button>
+            </div>
+        </div>
 
-</div>
+        <div class="social-proof">
+            <h2 style="margin-bottom: 20px;">✅ ¿Por qué elegir VRIM?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                <div>
+                    <h3>🏆 Líderes en el mercado</h3>
+                    <p>Más de 30 años protegiendo familias mexicanas</p>
+                </div>
+                <div>
+                    <h3>💯 Sin restricciones</h3>
+                    <p>Sin límite de edad o enfermedades preexistentes</p>
+                </div>
+                <div>
+                    <h3>🇲🇽 Cobertura nacional</h3>
+                    <p>Atención en toda la República Mexicana</p>
+                </div>
+                <div>
+                    <h3>⚡ Respuesta inmediata</h3>
+                    <p>5 días hábiles para reembolsos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="urgency-banner">
+            🎯 ¡No esperes a que sea demasiado tarde! Protege a tu familia HOY mismo 🎯
+        </div>
+
+        <div style="text-align: center; margin: 40px 20px;">
+            <button class="whatsapp-btn" onclick="contactWhatsApp('INFORMACIÓN GENERAL')" style="font-size: 1.4em; padding: 20px 40px;">
+                📞 ¡Contactar ahora por WhatsApp!
+            </button>
+            <p style="margin-top: 15px; color: white; font-size: 1.1em;">
+                Respuesta inmediata • Asesoría personalizada • Sin compromiso
+            </p>
+        </div>
+    </div>
+
+    <div class="floating-benefits">
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">🚨 ¡Urgente!</h3>
+        <p style="margin-bottom: 10px;">• Ambulancia GRATIS</p>
+        <p style="margin-bottom: 10px;">• Check-up anual SIN COSTO</p>
+        <p style="margin-bottom: 10px;">• Atención médica 24/7</p>
+        <p style="margin-bottom: 15px;">• Videoconsultas incluidas</p>
+        <button class="whatsapp-btn" onclick="contactWhatsApp('FLOTANTE')" style="font-size: 0.9em; padding: 10px 20px;">
+            💬 ¡Cotizar ya!
+        </button>
+    </div>
+
+    <script>
+        function toggleBenefits(cardType) {
+            const benefits = document.getElementById(cardType + '-benefits');
+            const allBenefits = document.querySelectorAll('.benefits');
+            
+            // Close all other benefits
+            allBenefits.forEach(benefit => {
+                if (benefit.id !== cardType + '-benefits') {
+                    benefit.classList.remove('active');
+                }
+            });
+            
+            // Toggle current benefits
+            benefits.classList.toggle('active');
+        }
+
+        function contactWhatsApp(membershipType) {
+            const phoneNumber = '527223540986';
+            let message = '';
+            
+            switch(membershipType) {
+                case 'ELITE':
+                    message = '¡Hola! Me interesa la membresía VRIM ELITE ($6,950) con todos sus beneficios. ¿Podrías darme más información?';
+                    break;
+                case 'PLATINO':
+                    message = '¡Hola! Me interesa la membresía VRIM PLATINO ($2,100). ¿Podrías darme más información sobre los beneficios?';
+                    break;
+                case 'BLACK':
+                    message = '¡Hola! Me interesa la membresía VRIM BLACK ($1,050). ¿Podrías ayudarme con más detalles?';
+                    break;
+                case 'VRIM PLUS':
+                    message = '¡Hola! Me interesa la membresía VRIM PLUS ($790). ¿Podrías darme más información?';
+                    break;
+                default:
+                    message = '¡Hola! Vi tu página de VRIM y me interesa conocer más sobre las membresías de protección médica. ¿Podrías asesorarme?';
+            }
+            
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const endOfMonth = new Date();
+            endOfMonth.setMonth(endOfMonth.getMonth() + 1);
+            endOfMonth.setDate(0);
+            endOfMonth.setHours(23, 59, 59, 999);
+            
+            const distance = endOfMonth.getTime() - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                document.querySelector('.countdown').innerHTML = '🎉 ¡Oferta especial disponible! 🎉';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-show Elite benefits on load
+            setTimeout(() => {
+                toggleBenefits('elite');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
